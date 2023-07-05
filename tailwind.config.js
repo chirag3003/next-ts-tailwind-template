@@ -1,20 +1,20 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
     content: [
-        './pages/**/*.{js,ts,jsx,tsx,mdx}',
-        './components/**/*.{js,ts,jsx,tsx,mdx}',
-        './app/**/*.{js,ts,jsx,tsx,mdx}',
+        "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+        "./components/**/*.{js,ts,jsx,tsx,mdx}",
+        "./app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
     theme: {
         extend: {
             colors: {
-                primary: "var(--color-primary)",
-                secondary: "var(--color-secondary)",
-                accent: "var(--color-accent)",
-                text: "var(--color-text)",
-                background: "var(--color-background)",
-            }
-        }
+                primary: "rgb(var(--color-primary) / <alpha-value>)",
+                secondary: "rgb(var(--color-secondary) / <alpha-value>)",
+                accent: "rgb(var(--color-accent) / <alpha-value>)",
+                text: "rgb(var(--color-text) / <alpha-value>)",
+                background: "rgb(var(--color-background) / <alpha-value>)",
+            },
+        },
     },
-    plugins: [require('@tailwindcss/forms')],
-}
+    plugins: [require("@tailwindcss/forms")],
+};
