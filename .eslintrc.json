@@ -4,6 +4,7 @@
     "rules": {
         "@next/next/no-img-element": "off",
         "react/button-has-type": "off",
+        "react/no-array-index-key": "off",
         "tailwindcss/no-custom-classname": "off",
         "unicorn/filename-case": "off",
         "unicorn/prefer-logical-operator-over-ternary": "off"
