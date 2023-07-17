@@ -1,29 +1,29 @@
-"use client";
-import React, { Fragment } from "react";
+'use client'
+import React, { Fragment } from 'react'
 
-import { Disclosure, Menu, Transition } from "@headlessui/react";
-import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Disclosure, Menu, Transition } from '@headlessui/react'
+import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline'
 
-import { cn } from "@/lib/utils";
+import { cn } from '@/lib/utils'
 
 const user = {
-    name: "Tom Cook",
-    email: "tom@example.com",
+    name: 'Tom Cook',
+    email: 'tom@example.com',
     imageUrl:
-        "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80",
-};
+        'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
+}
 const navigation = [
-    { name: "Dashboard", href: "#", current: true },
-    { name: "Team", href: "#", current: false },
-    { name: "Projects", href: "#", current: false },
-    { name: "Calendar", href: "#", current: false },
-    { name: "Reports", href: "#", current: false },
-];
+    { name: 'Dashboard', href: '#', current: true },
+    { name: 'Team', href: '#', current: false },
+    { name: 'Projects', href: '#', current: false },
+    { name: 'Calendar', href: '#', current: false },
+    { name: 'Reports', href: '#', current: false },
+]
 const userNavigation = [
-    { name: "Your Profile", href: "#" },
-    { name: "Settings", href: "#" },
-    { name: "Sign out", href: "#" },
-];
+    { name: 'Your Profile', href: '#' },
+    { name: 'Settings', href: '#' },
+    { name: 'Sign out', href: '#' },
+]
 
 const Navbar = () => {
     return (
@@ -42,20 +42,24 @@ const Navbar = () => {
                                 </div>
                                 <div className="hidden lg:ml-10 lg:block">
                                     <div className="flex space-x-4">
-                                        {navigation.map(item => (
+                                        {navigation.map((item) => (
                                             <a
                                                 key={item.name}
                                                 href={item.href}
                                                 className={cn(
-                                                    "rounded-md px-3 py-2 text-sm font-medium",
+                                                    'rounded-md px-3 py-2 text-sm font-medium',
                                                     {
-                                                        "bg-white bg-opacity-20 text-white":
+                                                        'bg-white bg-opacity-20 text-white':
                                                             item.current,
-                                                        "bg-white bg-opacity-0 text-white hover:bg-opacity-10":
+                                                        'bg-white bg-opacity-0 text-white hover:bg-opacity-10':
                                                             !item.current,
-                                                    },
+                                                    }
                                                 )}
-                                                aria-current={item.current ? "page" : undefined}
+                                                aria-current={
+                                                    item.current
+                                                        ? 'page'
+                                                        : undefined
+                                                }
                                             >
                                                 {item.name}
                                             </a>
@@ -66,11 +70,19 @@ const Navbar = () => {
                             <div className="flex lg:hidden">
                                 {/* Mobile menu button */}
                                 <Disclosure.Button className="inline-flex items-center justify-center rounded-md bg-primary p-2 text-white focus:outline-none">
-                                    <span className="sr-only">Open main menu</span>
+                                    <span className="sr-only">
+                                        Open main menu
+                                    </span>
                                     {open ? (
-                                        <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
+                                        <XMarkIcon
+                                            className="block h-6 w-6"
+                                            aria-hidden="true"
+                                        />
                                     ) : (
-                                        <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                                        <Bars3Icon
+                                            className="block h-6 w-6"
+                                            aria-hidden="true"
+                                        />
                                     )}
                                 </Disclosure.Button>
                             </div>
@@ -80,15 +92,25 @@ const Navbar = () => {
                                         type="button"
                                         className="shrink-0 rounded-full bg-primary p-1 text-white focus:outline-none"
                                     >
-                                        <span className="sr-only">View notifications</span>
-                                        <BellIcon className="h-6 w-6" aria-hidden="true" />
+                                        <span className="sr-only">
+                                            View notifications
+                                        </span>
+                                        <BellIcon
+                                            className="h-6 w-6"
+                                            aria-hidden="true"
+                                        />
                                     </button>
 
                                     {/* Profile dropdown */}
-                                    <Menu as="div" className="relative ml-3 shrink-0">
+                                    <Menu
+                                        as="div"
+                                        className="relative ml-3 shrink-0"
+                                    >
                                         <div>
                                             <Menu.Button className="flex rounded-full bg-primary text-sm text-white focus:outline-none">
-                                                <span className="sr-only">Open user menu</span>
+                                                <span className="sr-only">
+                                                    Open user menu
+                                                </span>
                                                 <img
                                                     className="h-8 w-8 rounded-full"
                                                     src={user.imageUrl}
@@ -106,16 +128,17 @@ const Navbar = () => {
                                             leaveTo="transform opacity-0 scale-95"
                                         >
                                             <Menu.Items className="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black/5 focus:outline-none">
-                                                {userNavigation.map(item => (
+                                                {userNavigation.map((item) => (
                                                     <Menu.Item key={item.name}>
                                                         {({ active }) => (
                                                             <a
                                                                 href={item.href}
                                                                 className={cn(
-                                                                    "block px-4 py-2 text-sm text-gray-700",
+                                                                    'block px-4 py-2 text-sm text-gray-700',
                                                                     {
-                                                                        "bg-gray-100": active,
-                                                                    },
+                                                                        'bg-gray-100':
+                                                                            active,
+                                                                    }
                                                                 )}
                                                             >
                                                                 {item.name}
@@ -132,19 +155,23 @@ const Navbar = () => {
                     </div>
                     <Disclosure.Panel className="lg:hidden">
                         <div className="space-y-1 px-2 pb-3 pt-2">
-                            {navigation.map(item => (
+                            {navigation.map((item) => (
                                 <Disclosure.Button
                                     key={item.name}
                                     as="a"
                                     href={item.href}
                                     className={cn(
-                                        "block rounded-md px-3 py-2 text-base font-medium",
+                                        'block rounded-md px-3 py-2 text-base font-medium',
                                         {
-                                            "bg-primary text-white": item.current,
-                                            "text-white hover:bg-opacity-75": !item.current,
-                                        },
+                                            'bg-primary text-white':
+                                                item.current,
+                                            'text-white hover:bg-opacity-75':
+                                                !item.current,
+                                        }
                                     )}
-                                    aria-current={item.current ? "page" : undefined}
+                                    aria-current={
+                                        item.current ? 'page' : undefined
+                                    }
                                 >
                                     {item.name}
                                 </Disclosure.Button>
@@ -171,12 +198,17 @@ const Navbar = () => {
                                     type="button"
                                     className="ml-auto shrink-0 rounded-full bg-primary p-1 text-white focus:outline-none "
                                 >
-                                    <span className="sr-only">View notifications</span>
-                                    <BellIcon className="h-6 w-6" aria-hidden="true" />
+                                    <span className="sr-only">
+                                        View notifications
+                                    </span>
+                                    <BellIcon
+                                        className="h-6 w-6"
+                                        aria-hidden="true"
+                                    />
                                 </button>
                             </div>
                             <div className="mt-3 space-y-1 px-2">
-                                {userNavigation.map(item => (
+                                {userNavigation.map((item) => (
                                     <Disclosure.Button
                                         key={item.name}
                                         as="a"
@@ -192,7 +224,7 @@ const Navbar = () => {
                 </>
             )}
         </Disclosure>
-    );
-};
+    )
+}
 
-export default Navbar;
+export default Navbar
