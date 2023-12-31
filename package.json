@@ -2,6 +2,9 @@
     "private": true,
     "name": "next13-tailwind-template",
     "version": "0.1.0",
+    "engines": {
+        "node": "20.x"
+    },
     "scripts": {
         "build": "next build",
         "dev": "next dev",
